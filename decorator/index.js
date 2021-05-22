@@ -9,11 +9,32 @@ var Phone = /** @class */ (function () {
     function Phone() {
     }
     Phone = __decorate([
-        useCase
+        standable(true)
     ], Phone);
     return Phone;
 }());
-function useCase(target) {
-    console.log(target + 'has case');
+/**
+ * 把手机立起来
+ * @param isStandable 是否可以站立
+ */
+function standable(isStandable) {
+    return function (target) {
+        target.standable = isStandable;
+    };
 }
-var iphone = new Phone();
+console.log(Phone);
+// [Function: Phone] { standAble: true }
+// @standable
+// class Phone {}
+/**
+ * 把手机立起来
+ * @param target 要修饰的类
+ */
+// function standable(target) {
+//   target.standable = true;
+//   console.log(target.name + ' can stand!')
+// }
+// let iphone = new Phone();
+// console.log(Phone)
+// Phone can stand!
+// [Function: Phone] { standAble: true }
