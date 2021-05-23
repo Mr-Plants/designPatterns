@@ -18,5 +18,8 @@ function readonly(target, name, descriptor) {
 
 let jack = new Person();
 
-jack.name = 'bruce';
+// jack.name = 'bruce';
 // Cannot assign to 'name' because it is a read-only property.
+
+
+
