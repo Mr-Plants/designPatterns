@@ -8,10 +8,13 @@ const VALID_STRATEGIES = {
     },
     notEmpty() {
 
-    },
-    number() {
-
     }
+
+}
+export const VALID_STRATEGIES_MAP = {
+    MAXLENGTH: 'maxLength',
+    MINLENGTH: 'minLength',
+    NOT_EMPTY: 'notEmpty',
 
 }
 
@@ -29,6 +32,7 @@ class Validator {
     addRules(value, rules) {
         this.value = value;
         this.rules = rules;
+        return this
     }
 
     valid() {
@@ -37,6 +41,8 @@ class Validator {
             this.rules[i] = ''
 
         }
+
+        return formatResult(true,)
     }
 }
 
