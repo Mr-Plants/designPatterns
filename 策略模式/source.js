@@ -38,13 +38,14 @@ class Validator {
     }
 
     /**
-        * addRules
-        * 添加校验规则
-        */
+     * addRules
+     * 添加校验规则
+     */
     addRules(value = "", rules) {
         this._ruleExecuters = [];
         rules.forEach((rule) => {
             const args = rule.split(":");
+            // 如果没有按照
             const functionName = args.shift() || "default";
             // 忽略下这里的断言类型👀
             const ruleFunc = ValidStrategies[functionName].bind(this, value);
@@ -57,8 +58,8 @@ class Validator {
     }
 
     /**
-        * valid
-        */
+     * valid
+     */
     valid() {
         for (let i = 0; i < this._ruleExecuters.length; i++) {
             const res = this._ruleExecuters[i].func.apply(

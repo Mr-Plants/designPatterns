@@ -3,11 +3,15 @@
 
 // import Validator, {VALID_STRATEGIES_MAP} from "./Validator";
 
-let a = require('./source.js')
-const res = a.Validator.addRules("123", [
-    "isNonEmpty",
+const a = require('./source.js')
+const s = require('./Validator')
+const res = s.Validator.addRules("123", [
+    "notEmpty",
     "minLength:5",
     "maxLength:12",
 ]).valid();
 
+// let res2 = s.Validator.addRules('32434', ['']).valid();
+
 console.log(res)
+// console.log(res2)
